@@ -1,0 +1,75 @@
+@import "compass/css3";
+
+$black:#000;
+$blueish: #636393;
+$white: #fff;
+$red: #B5222D;
+$orange: #D4953C;
+$turq: #609491;
+$green: #87A248;
+
+@mixin hoverEffect($color){
+  border-bottom: 35px solid $color;
+  height: 1px;
+}
+
+@import "compass/typography";
+@import "compass/utilities";
+@import "compass/css3";
+  
+  .wrap {
+    background-color: #636363;
+  }
+
+ul{
+  li{
+    background: $black;
+    @include no-bullets;
+    @include float-left;
+    height: 44px;
+    padding:10px 5px;
+    a{
+    width:175px;
+    height:40px;
+    lineheight:53px;
+    border-bottom: 4px solid $blueish;
+    color:$white;
+    font-size:18px;
+    font-weight:lighter;
+    text-align:center;
+    text-decoration:none;
+    display:block;
+    @include transition-property(.2s, all, linear);
+    }
+    &:nth-child(1) a{
+      border-color: $blueish;
+      &:hover{
+        @include hoverEffect($blueish);
+      }   
+    }
+    &:nth-child(2) a{
+      border-color: $red;
+      &:hover{
+        @include hoverEffect($red);
+      }   
+    }
+    &:nth-child(3) a{
+      border-color: $orange;
+      &:hover{
+        @include hoverEffect($orange);
+      }  
+    }
+    &:nth-child(4) a{
+      border-color: $turq;
+      &:hover{
+        @include hoverEffect($turq);
+      }
+    }
+    &:nth-child(5) a{
+      border-color: $green;
+      &:hover{
+        @include hoverEffect($green);
+      }
+    }
+  }
+}
